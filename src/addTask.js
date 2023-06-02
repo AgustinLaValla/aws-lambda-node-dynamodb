@@ -14,13 +14,13 @@ const addTask = async (event) => {
   await dynamoDB
     .put({
       TableName: "tasksTable",
-      Item: { id, title, description, createdAt: date },
+      Item: newTask,
     })
     .promise();
 
   return {
-    statusCode: 201,
-    body: JSON.stringify(newTask),
+    status: 201,
+    body: newTask
   };
 };
 
