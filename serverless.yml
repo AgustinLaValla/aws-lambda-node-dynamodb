@@ -10,7 +10,7 @@ provider:
       Action:
         - dynamodb:*
       Resource:
-        - arn:aws:dynamodb:us-east-1:845068608633:table/tasksTable
+        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/tasksTable
 
 functions:
   api:
